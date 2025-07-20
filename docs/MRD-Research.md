@@ -1,4 +1,3 @@
-
 Strategic Refinement and Competitive Analysis of the Self-Hosted Website Ingestion & Citation Service
 
 

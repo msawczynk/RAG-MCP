@@ -12,4 +12,4 @@ For bugs or features, open an issue first.
 
 ## Code Style
 - Follow PEP8 for Python.
-- Use ESLint for JavaScript. 
+- Use ESLint for JavaScript.

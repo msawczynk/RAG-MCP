@@ -11,4 +11,4 @@
 3. Run `docker-compose up -d`.
 4. Verify services are running.
 
-For Pro tier, configure subscription key. 
+For Pro tier, configure subscription key.
