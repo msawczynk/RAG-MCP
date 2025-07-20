@@ -43,4 +43,4 @@ See [Pricing](#pricing) for details.
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
-This project is licensed under the AGPLv3 - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the AGPLv3 - see the [LICENSE](LICENSE) file for details.
