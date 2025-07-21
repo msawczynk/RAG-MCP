@@ -1,24 +1,18 @@
-import scrapy
-from scrapy_playwright.page import PageMethod
+import urllib.request
 
-class HybridSpider(scrapy.Spider):
-    name = 'hybrid'
-    start_urls = ['https://example.com']
 
-    def start_requests(self):
-        for url in self.start_urls:
-            yield scrapy.Request(url, meta=dict(
-                playwright=True,
-                playwright_include_page=True,
-                playwright_page_methods=[
-                    PageMethod('wait_for_selector', 'body')
-                ]
-            ))
+def fetch_url(url: str) -> str:
+    """Retrieve raw HTML content from a URL."""
+    with urllib.request.urlopen(url) as response:
+        return response.read().decode()
 
-    async def parse(self, response):
-        # Parse logic here
-        page = response.meta['playwright_page']
-        content = await page.content()
-        await page.close()
-        # Process content
-        yield {'url': response.url, 'content': content} 
+
+def crawl(urls):
+    """Yield dictionaries with URL and HTML content."""
+    for url in urls:
+        try:
+            html = fetch_url(url)
+            yield {"url": url, "content": html}
+        except Exception:
+            # Skip URLs that fail to fetch
+            continue

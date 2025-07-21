@@ -1,26 +1,28 @@
 import click
-from crawler import HybridSpider
-from scrapy.crawler import CrawlerProcess
+
+from rag import ingest, perform_rag_query
+
 
 @click.group()
 def cli():
+    """Simple command-line interface."""
     pass
 
-@cli.command()
-@click.option('--url', required=True)
-def crawl(url):
-    process = CrawlerProcess(settings={
-        'PLAYWRIGHT_BROWSER_TYPE': 'chromium',
-    })
-    process.crawl(HybridSpider, start_urls=[url])
-    process.start()
 
 @cli.command()
-@click.option('--query', required=True)
+@click.option('--url', required=True, help='URL to crawl')
+def crawl_cmd(url):
+    """Fetch and ingest a single URL."""
+    ingest(url)
+    click.echo(f'Ingested {url}')
+
+
+@cli.command()
+@click.option('--query', required=True, help='Query string')
 def query(query):
-    from rag import perform_rag_query
     result = perform_rag_query(query)
-    print(result)
+    click.echo(result)
+
 
 if __name__ == '__main__':
-    cli() 
+    cli()

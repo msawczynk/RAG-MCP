@@ -4,9 +4,10 @@ This document summarizes how to crawl a website and query the API.
 
 ## Crawling
 
-Run the CLI crawler with:
+Install dependencies and run the CLI crawler:
 
 ```bash
+pip install -r src/requirements.txt
 python src/cli.py crawl --url https://example.com
 ```
 

@@ -5,3 +5,5 @@
 - Consider adding an authentication layer to the REST API even for the community tier.
 - Provide CI scripts for linting Python with flake8 and running unit tests.
 - Expand the UI with status dashboards and crawl configuration.
+- Implement persistent storage for ingested pages.
+- Add basic authentication to the API.

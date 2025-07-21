@@ -1,13 +1,4 @@
-scrapy
-scrapy-playwright
-playwright
-unstructured
-qdrant-client
-chromadb
-langchain
-langchain-community
-sentence-transformers
 fastapi
 uvicorn
-react # wait, no, this is python
-# Note: Add more as needed like torch for models, etc. 
+click
+# Minimal requirements for the demo implementation.
